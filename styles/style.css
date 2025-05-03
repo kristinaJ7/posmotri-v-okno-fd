@@ -37,6 +37,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 /*весь контент*/
 .content {
@@ -53,29 +54,37 @@ ol {
 /*блок с видео и формой*/
 .result {
   width: 100%;
+ 
+  
+  
 }
 .result__video-container {
   width: 711px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   position: relative;
   height: 386px;
+ 
+  
 }
 .result__video {
   object-fit: cover;
   object-position: center;
   height: 100%;
   width: 100%;
+ 
 }
 /*форма*/
 .search-form {
   display: flex;
   justify-content: space-between;
-  grid-area: search search;
+  grid-area: search;
+  
 }
 /*набор полей*/
 .search-form__fieldset {
   border: none;
   width: 212px;
+  
 }
 .visually-hidden {
   position: absolute;
@@ -89,7 +98,7 @@ ol {
 /*общий класс для кнопок*/
 .button {
   color: rgba(255, 255, 255, 1);
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
@@ -117,6 +126,7 @@ ol {
   align-self: flex-end;
   width: 194px;
   height: 34px;
+  color: inherit;
 }
 /*label*/
 .search-form__label {
@@ -124,17 +134,20 @@ ol {
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  
 }
 /*label при фокусе*/
 .search-form__label:focus {
   outline: none;
 }
 .search-form__label:has(.search-form__textfield:focus-visible) {
-  border: 1px solid rgba(255, 255, 255, 1);
+  outline: 1px solid rgba(255, 255, 255, 1);
+ 
+ 
 }
 /*текст форма*/
 .search-form__textfield {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -147,8 +160,12 @@ ol {
   border-bottom: 1px solid rgba(255, 255, 255, 1);
   appearance: none;
   cursor: pointer;
-  margin-top: 8px;
+  color: inherit;
+  
+ 
+  
 }
+
 /*чекбокс*/
 .search-form__checkbox-list {
   display: flex;
@@ -156,7 +173,7 @@ ol {
   align-items: center;
   gap: 15px;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 /*pseudo-чекбокс*/
 .search-form__pseudo-checkbox {
@@ -165,8 +182,10 @@ ol {
   align-items: center;
   width: 19px;
   height: 19px;
-  border: 1px solid #fff;
+  outline : 1px solid #fff;
   position: relative;
+  color: inherit;
+  
 }
 /*псевдоэлемент чекбокс*/
 .search-form__pseudo-checkbox::after {
@@ -204,9 +223,10 @@ input[type='checkbox']:focus-visible {
 }
 .content__list-container {
   height: 298px;
-  margin-top: 26px;
-  overflow-y: auto;
-  grid-area: list details;
+  width: 399px;
+  margin-top: 20px;
+  overflow: auto;
+  grid-area: list;
   position: relative;
 }
 /*контент в .content__details*/
@@ -226,10 +246,6 @@ input[type='checkbox']:focus-visible {
   display: block;
   width: 194px;
   height: 103px;
-}
-.content__video-card-thumbnail img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -239,20 +255,23 @@ input[type='checkbox']:focus-visible {
 .content__list-item{
   padding-left:3px ;
   padding-right: 3px;
-}
+  
+} 
 /*фокус сбросс*/
 .content__list-item a:focus{
   outline: none;
 }
 /*фокус при Tab контент элементы в .content__details*/
 .content__list-item:has(a:focus-visible) {
-  border: 1px solid rgba(255, 255, 255, 1);
+  outline: 1px solid rgba(255, 255, 255, 1);
 }
 .content__card-link_current {
+  display: block;
   background-color: rgba(84, 80, 80, 1);
 }
-.content__list-item:has(.content__card-link_current:active){
-  background-color: rgba(60, 56, 56, 1);
+.content__list-item:has(.content__card-link:active){
+  background-color: rgba(84, 80, 80, 1);
+
 }
 .content__list-item:has(.content__card-link_current:focus-visible){
   background-color: rgba(60, 56, 56, 1);
@@ -262,21 +281,22 @@ input[type='checkbox']:focus-visible {
 }
 /*залоловок в форме*/
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
   color: rgba(255, 255, 255, 1);
+  margin-bottom: 8px;
 }
 /*заголовок в .content__details*/
 .title {
-  font-family: Oswald;
+  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 1);
+  
 }
 /*стили для (по-) в заголовке*/
 .content__accent {
@@ -284,13 +304,14 @@ input[type='checkbox']:focus-visible {
   align-items: center;
   display: inline-block;
   position: relative;
+  
 }
 .content__accent::after {
   content: '-';
   position: absolute;
-  bottom:  8px; 
+  bottom:  5px; 
   right: 1px;
-  left: 92px;
+  left: 86px;
 }
 /*ссылка карточки*/
 .content__card-link {
@@ -299,7 +320,7 @@ input[type='checkbox']:focus-visible {
 }
 /*зоголовок карточек*/
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -313,7 +334,7 @@ input[type='checkbox']:focus-visible {
 }
 /*описание под заголовком карточек*/
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: rgba(255, 255, 255, 1);
